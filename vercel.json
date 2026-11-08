@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/Hasnains%20Website/index.html"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/Hasnains%20Website/$1"
+    }
+  ]
+}
