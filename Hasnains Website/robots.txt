@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /cart.html
+Sitemap: https://shapeshiftingclub.vercel.app/sitemap.xml
