@@ -43,7 +43,7 @@ const PRODUCTS = {
     sub:'Desi friendly meals with calories and macros set for you.',
     feats:['Personalized meal plan','Calorie and macro targets','Pakistani food swaps','Easy to follow every day']},
   bundle:{id:'bundle',name:'Workout + Nutrition',wa:'📋 Workout + Nutrition Bundle (PDF)',type:'Best value',icon:'bundle',price:2400,was:8000,featured:true,
-    sub:'Both plans built to work together. The fastest way to real results.',
+    sub:'Workout and nutrition plans designed to fit into the same routine.',
     feats:['Full workout plan','Full nutrition plan','Both synced to one goal','Priority WhatsApp replies']},
   consult:{id:'consult',name:'1 Hour Consultation',wa:'🧠 1 Hour Consultation',type:'1 hour, on WhatsApp',icon:'clock',price:1000,was:2000,
     sub:'One hour with Hasnain on chat, voice or video to plan your journey.',
