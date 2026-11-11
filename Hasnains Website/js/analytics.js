@@ -24,7 +24,7 @@
     window.gtag('config', id, { anonymize_ip: true });
   }
 
-  /* track('add_to_cart', {item:'bundle', value:3500}) */
+  /* track('add_to_cart', {item:'bundle', value:2400}) */
   window.sscTrack = function (name, params) {
     try { if (window.gtag) window.gtag('event', name, params || {}); } catch (e) {}
     try { window.va('event', { name: name, data: params || {} }); } catch (e) {}

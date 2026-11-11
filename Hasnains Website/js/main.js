@@ -36,13 +36,13 @@ const ICONS = {
 
 /* ---------- Catalog (same prices as the banner) ---------- */
 const PRODUCTS = {
-  workout:{id:'workout',name:'Workout Plan',wa:'🏋️ Workout Plan (PDF)',type:'PDF plan',icon:'dumbbell',price:2500,was:4000,
+  workout:{id:'workout',name:'Workout Plan',wa:'🏋️ Workout Plan (PDF)',type:'PDF plan',icon:'dumbbell',price:1500,was:4000,
     sub:'A training plan built around your goal, schedule and equipment.',
     feats:['Fat loss or muscle gain focus','Strength and endurance','Home or gym options','Exercise demo links']},
-  nutrition:{id:'nutrition',name:'Nutrition Plan',wa:'🥗 Nutrition Plan (PDF)',type:'PDF plan',icon:'apple',price:2500,was:4000,
+  nutrition:{id:'nutrition',name:'Nutrition Plan',wa:'🥗 Nutrition Plan (PDF)',type:'PDF plan',icon:'apple',price:1500,was:4000,
     sub:'Desi friendly meals with calories and macros set for you.',
     feats:['Personalized meal plan','Calorie and macro targets','Pakistani food swaps','Easy to follow every day']},
-  bundle:{id:'bundle',name:'Workout + Nutrition',wa:'📋 Workout + Nutrition Bundle (PDF)',type:'Best value',icon:'bundle',price:3500,was:8000,featured:true,
+  bundle:{id:'bundle',name:'Workout + Nutrition',wa:'📋 Workout + Nutrition Bundle (PDF)',type:'Best value',icon:'bundle',price:2400,was:8000,featured:true,
     sub:'Both plans built to work together. The fastest way to real results.',
     feats:['Full workout plan','Full nutrition plan','Both synced to one goal','Priority WhatsApp replies']},
   consult:{id:'consult',name:'1 Hour Consultation',wa:'🧠 1 Hour Consultation',type:'1 hour, on WhatsApp',icon:'clock',price:1000,was:2000,
@@ -75,7 +75,7 @@ const Cart = {
     if(id === 'bundle') items = items.filter(i => i !== 'workout' && i !== 'nutrition');
     if(id === 'workout' || id === 'nutrition'){
       const other = id === 'workout' ? 'nutrition' : 'workout';
-      if(items.includes(other)){ items = items.filter(i => i !== other); id = 'bundle'; note = 'Switched to the bundle. You save PKR 1,500.'; }
+      if(items.includes(other)){ items = items.filter(i => i !== other); id = 'bundle'; note = 'Switched to the bundle. You save PKR 600.'; }
     }
     items.push(id); this.set(items); return {ok:true, id, note};
   },
@@ -466,9 +466,9 @@ function cartPage(){
     const has = id => ids.includes(id);
     const offer = (icon, tag, title, text, btn, up, primary) => `<div class="offer"><div class="ic">${ICONS[icon]}</div><div><span class="tagline">${tag}</span><b>${title}</b><small>${text}</small></div><button type="button" class="btn ${primary ? 'btn-primary' : 'btn-secondary'} btn-sm" data-up="${up}">${btn}</button></div>`;
     let offers = '';
-    if(has('workout') && !has('bundle')) offers += offer('apple','Recommended','Add the Nutrition Plan for just PKR 1,000 more','Training without the right food is only half the work. Get both plans built around the same goal.','Upgrade · +PKR 1,000','bundle',true);
-    else if(has('nutrition') && !has('bundle')) offers += offer('dumbbell','Recommended','Add the Workout Plan for just PKR 1,000 more','Pair your meals with a training plan made for you and see results faster.','Upgrade · +PKR 1,000','bundle',true);
-    else if(!has('bundle')) offers += offer('bundle','Most popular','Add the full Workout + Nutrition bundle','Everything you need to transform, for PKR 3,500 instead of 8,000.','Add bundle','bundle',true);
+    if(has('workout') && !has('bundle')) offers += offer('apple','Recommended','Add the Nutrition Plan for just PKR 900 more','Training without the right food is only half the work. Get both plans built around the same goal.','Upgrade · +PKR 900','bundle',true);
+    else if(has('nutrition') && !has('bundle')) offers += offer('dumbbell','Recommended','Add the Workout Plan for just PKR 900 more','Pair your meals with a training plan made for you and see results faster.','Upgrade · +PKR 900','bundle',true);
+    else if(!has('bundle')) offers += offer('bundle','Most popular','Add the full Workout + Nutrition bundle','Everything you need to transform, for PKR 2,400 instead of 8,000.','Add bundle','bundle',true);
     if(!has('consult')) offers += offer('clock','Half price today','Add a 1 hour call with Hasnain · PKR 1,000','Go through your plan together so you start right from day one. Usually PKR 2,000.','Add call','consult',false);
     if(!offers) offers = `<div class="complete">${ICONS.check}<span>You've got the complete package. Great choice!</span></div>`;
     const pct = Math.round(save / was * 100);

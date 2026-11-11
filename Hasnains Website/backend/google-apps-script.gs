@@ -30,9 +30,9 @@ const HEADERS = ['Received (PK time)', 'Order #', 'Type', 'Status', 'Name', 'Wha
 
 // Prices live HERE, on the server. The website's numbers are never trusted.
 const PRODUCTS = {
-  workout:   { name: 'Workout Plan (PDF)',               price: 2500 },
-  nutrition: { name: 'Nutrition Plan (PDF)',             price: 2500 },
-  bundle:    { name: 'Workout + Nutrition Bundle (PDF)', price: 3500 },
+  workout:   { name: 'Workout Plan (PDF)',               price: 1500 },
+  nutrition: { name: 'Nutrition Plan (PDF)',             price: 1500 },
+  bundle:    { name: 'Workout + Nutrition Bundle (PDF)', price: 2400 },
   consult:   { name: '1 Hour Consultation',              price: 1000 }
 };
 const PAYMENTS = ['JazzCash', 'Easypaisa', 'Bank Transfer'];
